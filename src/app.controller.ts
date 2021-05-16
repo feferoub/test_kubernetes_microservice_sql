@@ -62,7 +62,11 @@ export class AppController {
 
   @Get('/get-db')
   async getDb(): Promise<string> {
-    pool = pool || createPool();
+    try {
+      pool = pool || createPool();
+    } catch (e) {
+      console.log('error createpool', e);
+    }
     try {
       return await pool.select('name').from('votes');
     } catch (e) {
