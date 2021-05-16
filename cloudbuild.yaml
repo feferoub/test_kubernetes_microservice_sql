@@ -13,7 +13,7 @@ steps:
         'set',
         'image',
         'deployment/sql-microservice-deployment',
-        'backend=gcr.io/$PROJECT_ID/sql-microservice-image:latest',
+        'sql-microservice=gcr.io/$PROJECT_ID/sql-microservice-image:latest',
       ]
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-a'
